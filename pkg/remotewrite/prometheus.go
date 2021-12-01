@@ -81,8 +81,10 @@ func (pm *PrometheusMapping) MapTrend(ms *metricsStorage, sample stats.Sample, l
 		"max":   s.Max,
 		"avg":   s.Avg,
 		"med":   s.Med,
+		"p(50)": p(s, 0.50),
 		"p(90)": p(s, 0.90),
 		"p(95)": p(s, 0.95),
+		"p(99)": p(s, 0.99),
 	}
 
 	// Prometheus metric system does not support Trend so this mapping will store gauges
